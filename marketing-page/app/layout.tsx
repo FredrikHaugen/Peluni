@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { AnalyticsConsent } from "@/components/AnalyticsConsent";
+import { APPEARANCE_SCRIPT } from "@/lib/appearance-script";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -39,10 +40,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
+    // The appearance script sets data-theme and data-appearance on <html> before hydration.
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${text.variable} ${ui.variable} ${code.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: APPEARANCE_SCRIPT }} />
+      </head>
       <body className="flex min-h-full flex-col">
         {children}
         <AnalyticsConsent />

@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T22:00:00Z",
+  "title": "Design System: peluni",
+  "extensions": {
+    "colorMeta": {
+      "marker-teal": {
+        "role": "primary",
+        "displayName": "Marker Teal",
+        "canonical": "oklch(84.7% 0.084 159.0)",
+        "tonalRamp": [
+          "#001005",
+          "#122d1f",
+          "#0c5234",
+          "#367554",
+          "#5a9977",
+          "#7fbf9b",
+          "#a1e2bd",
+          "#d8f8e4"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(95.9% 0.005 117.9)",
+        "dark": "#1c1e1b",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#262725",
+          "#454542",
+          "#666663",
+          "#898a86",
+          "#adaeab",
+          "#d0d1cd",
+          "#eeefed"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(21.4% 0.006 156.7)",
+        "dark": "#eceee9",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#252726",
+          "#434644",
+          "#636765",
+          "#868a88",
+          "#abafac",
+          "#ced2cf",
+          "#edefee"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "oklch(43.3% 0.009 151.7)",
+        "dark": "#a8ada6",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#252725",
+          "#424643",
+          "#626863",
+          "#858b86",
+          "#aab0ab",
+          "#cdd3ce",
+          "#ecefed"
+        ]
+      },
+      "window-white": {
+        "role": "neutral",
+        "displayName": "Window White",
+        "canonical": "oklch(100% 0 0)",
+        "dark": "#262924",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(86.2% 0.010 131.4)",
+        "dark": "#3a3e38",
+        "tonalRamp": [
+          "#0a0c09",
+          "#252724",
+          "#434640",
+          "#646761",
+          "#878a84",
+          "#abafa9",
+          "#ced2cb",
+          "#edefec"
+        ]
+      },
+      "desk": {
+        "role": "neutral",
+        "displayName": "Desk",
+        "canonical": "oklch(90.5% 0.010 131.4)",
+        "dark": "#2c302a",
+        "tonalRamp": [
+          "#0a0c09",
+          "#252724",
+          "#434641",
+          "#646761",
+          "#878a84",
+          "#acafa9",
+          "#ced2cb",
+          "#edefec"
+        ]
+      },
+      "selection-blue": {
+        "role": "neutral",
+        "displayName": "Selection Blue",
+        "canonical": "oklch(86.3% 0.067 254.0)",
+        "dark": "#3a6ea8",
+        "tonalRamp": [
+          "#030b19",
+          "#1b2737",
+          "#2a4668",
+          "#4b688c",
+          "#6d8cb2",
+          "#91b1d8",
+          "#b3d4fd",
+          "#e0f0ff"
+        ]
+      },
+      "overlay-black": {
+        "role": "neutral",
+        "displayName": "Overlay Black",
+        "canonical": "oklch(23.2% 0.004 286.1)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#262627",
+          "#454547",
+          "#666668",
+          "#89898b",
+          "#adadb0",
+          "#d1d1d3",
+          "#eeeef0"
+        ]
+      },
+      "overlay-white": {
+        "role": "neutral",
+        "displayName": "Overlay White"
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "canonical": "#1c1e1b"
+      },
+      "charcoal-ink": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "canonical": "#eceee9"
+      },
+      "glass": {
+        "role": "neutral",
+        "displayName": "Glass",
+        "canonical": "rgb(255 255 255 / 0.56)",
+        "dark": "rgb(58 62 56 / 0.5)"
+      },
+      "glass-strong": {
+        "role": "neutral",
+        "displayName": "Glass Strong",
+        "canonical": "rgb(246 247 243 / 0.78)",
+        "dark": "rgb(30 32 29 / 0.76)"
+      },
+      "glass-panel": {
+        "role": "neutral",
+        "displayName": "Glass Panel",
+        "canonical": "rgb(246 247 243 / 0.93)",
+        "dark": "rgb(30 32 29 / 0.92)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The home page h1 only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Home page section headings (Chapter)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Sub-page section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, full Ink, at most 42rem wide."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, buttons, tables, footer."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Transcripts, commands and code."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window",
+        "value": "inset 0 1px 0 var(--window-rim), 0 0 0 1px rgb(0 0 0 / 0.08), 0 34px 70px -30px rgb(0 0 0 / 0.5), 0 12px 24px -14px rgb(0 0 0 / 0.28)",
+        "purpose": "macOS window mockups; the inner rim shows only on charcoal."
+      },
+      {
+        "name": "glass",
+        "value": "inset 0 1px 0 var(--glass-rim), inset 0 0 0 1px var(--glass-edge), 0 6px 16px -8px rgb(0 0 0 / 0.3)",
+        "purpose": "Toolbar control capsules."
+      },
+      {
+        "name": "floating-glass",
+        "value": "inset 0 1px 0 var(--glass-rim), inset 0 0 0 1px var(--glass-edge), 0 28px 56px -24px rgb(0 0 0 / 0.5)",
+        "purpose": "Consent panel and the Wi-Fi module."
+      },
+      {
+        "name": "overlay",
+        "value": "0 14px 30px -12px rgb(0 0 0 / 0.5), inset 0 0 0 1px rgb(255 255 255 / 0.25)",
+        "purpose": "The recording overlay pill."
+      },
+      {
+        "name": "keycap",
+        "value": "inset 0 -2px 0 var(--border), 0 1px 0 var(--border)",
+        "purpose": "A flat key with a deeper bottom edge."
+      }
+    ],
+    "motion": [
+      {
+        "name": "appearance-spring",
+        "value": "cubic-bezier(0.3, 1.3, 0.5, 1); leading edge 0.34s, trailing 0.52s after 0.05s",
+        "purpose": "The appearance switch thumb's stretch-and-settle."
+      },
+      {
+        "name": "appearance-crossfade",
+        "value": "View Transition, 0.32s ease-out, switch excluded",
+        "purpose": "Changing appearance."
+      },
+      {
+        "name": "wave",
+        "value": "1.1s ease-in-out infinite, staggered -0.2s/-0.45s/-0.75s/-0.9s on 2n/3n/5n/7n",
+        "purpose": "Overlay level bars."
+      },
+      {
+        "name": "caret",
+        "value": "1.1s step-end infinite",
+        "purpose": "Text cursor blink in mockups."
+      },
+      {
+        "name": "rec-dot",
+        "value": "1.6s ease-in-out infinite",
+        "purpose": "The record light."
+      },
+      {
+        "name": "demo",
+        "value": "12s loop, opacity/transform/clip-path only",
+        "purpose": "The hero dictation demo."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "Every loop stops under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "phone-check",
+        "value": "390px"
+      }
+    ],
+    "materials": [
+      {
+        "name": "liquid-glass",
+        "value": "backdrop-filter: blur(16px) saturate(1.8) over var(--glass) / var(--glass-strong)",
+        "purpose": "Toolbar controls, floating panels and modules, the header from 640px. Solid under reduced transparency, increased contrast or no backdrop-filter support."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "macOS 27 alert-style capsule for the main action.",
+      "html": "<button class=\"ds-btn-primary\">Allow</button>",
+      "css": ".ds-btn-primary { min-height: 44px; padding: 0 16px; border: 0; border-radius: 9999px; background: var(--foreground, #171a18); color: var(--background, #f1f2ee); font: 600 0.875rem/1 'Atkinson Hyperlegible Next', system-ui, sans-serif; cursor: pointer; transition: opacity 0.15s; } .ds-btn-primary:hover { opacity: 0.85; } .ds-btn-primary:focus-visible { outline: 2px solid var(--foreground, #171a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The alternative action beside a primary button.",
+      "html": "<button class=\"ds-btn-secondary\">Decline</button>",
+      "css": ".ds-btn-secondary { min-height: 44px; padding: 0 16px; border: 0; border-radius: 9999px; background: color-mix(in srgb, var(--foreground, #171a18) 8%, transparent); color: var(--foreground, #171a18); font: 600 0.875rem/1 'Atkinson Hyperlegible Next', system-ui, sans-serif; cursor: pointer; transition: background 0.15s; } .ds-btn-secondary:hover { background: color-mix(in srgb, var(--foreground, #171a18) 13%, transparent); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--foreground, #171a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "description": "Links are underlined text; the underline darkens on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">How cleanup works</a>",
+      "css": ".ds-link { color: var(--foreground, #171a18); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--foreground, #171a18) 40%, transparent); text-underline-offset: 4px; transition: text-decoration-color 0.15s; font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-link:hover { text-decoration-color: var(--foreground, #171a18); } .ds-link:focus-visible { outline: 2px solid var(--foreground, #171a18); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Default Chip",
+      "kind": "chip",
+      "refersTo": "chip-default",
+      "description": "Marks the default cleanup level.",
+      "html": "<span class=\"ds-chip\">default</span>",
+      "css": ".ds-chip { display: inline-block; padding: 2px 6px; border-radius: 6px; background: var(--rec, #9ddeb9); color: #171a18; font: 600 0.875rem/1.25 'Atkinson Hyperlegible Next', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Keycap",
+      "kind": "custom",
+      "refersTo": "keycap",
+      "description": "A key named in text, like Right ⌥.",
+      "html": "<kbd class=\"ds-kbd\">Right ⌥</kbd>",
+      "css": ".ds-kbd { display: inline-block; padding: 2px 6px; border: 1px solid var(--border, #cfd3cc); border-radius: 6px; background: var(--card, #fff); color: var(--foreground, #171a18); font: 0.85em/1.375 'Atkinson Hyperlegible Mono', ui-monospace, monospace; box-shadow: inset 0 -2px 0 var(--border, #cfd3cc), 0 1px 0 var(--border, #cfd3cc); }"
+    },
+    {
+      "name": "Window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "A macOS 27 window mockup: 24px corners, no divider, glass toolbar controls.",
+      "html": "<figure class=\"ds-window\" aria-label=\"Example: Reminders\"><div class=\"ds-window-bar\"><span class=\"ds-lights\"><i></i><i></i><i></i></span><b>Reminders</b><span class=\"ds-glass-controls\"><svg viewBox=\"0 0 20 20\"><path d=\"M10 4.5v11M4.5 10h11\"/></svg></span></div><div class=\"ds-window-body\">Call the dentist about Friday</div></figure>",
+      "css": ".ds-window { margin: 0; overflow: hidden; border-radius: 24px; background: var(--card, #fff); color: var(--foreground, #171a18); font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif; box-shadow: inset 0 1px 0 var(--window-rim, transparent), 0 0 0 1px rgb(0 0 0 / 0.08), 0 34px 70px -30px rgb(0 0 0 / 0.5), 0 12px 24px -14px rgb(0 0 0 / 0.28); } .ds-window-bar { display: flex; align-items: center; gap: 16px; height: 52px; padding: 0 20px; font-size: 0.85rem; } .ds-window-bar b { font-weight: 600; opacity: 0.85; } .ds-lights { display: flex; gap: 8px; } .ds-lights i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; } .ds-lights i:nth-child(2) { background: #febc2e; } .ds-lights i:nth-child(3) { background: #28c840; } .ds-glass-controls { margin-left: auto; display: flex; align-items: center; height: 32px; padding: 0 10px; border-radius: 9999px; background: var(--glass, rgb(255 255 255 / 0.56)); backdrop-filter: blur(16px) saturate(1.8); box-shadow: inset 0 1px 0 var(--glass-rim, #fff), inset 0 0 0 1px var(--glass-edge, rgb(0 0 0 / 0.1)), 0 6px 16px -8px rgb(0 0 0 / 0.3); } .ds-glass-controls svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; } .ds-window-body { padding: 8px 48px 28px; font-size: 1.1rem; }"
+    },
+    {
+      "name": "Recording Overlay",
+      "kind": "custom",
+      "refersTo": "overlay-pill",
+      "description": "peluni's real overlay: a dark capsule with level bars, dark in both themes.",
+      "html": "<div class=\"ds-overlay\"><span class=\"ds-bars\"><i style=\"height:40%\"></i><i style=\"height:75%\"></i><i style=\"height:100%\"></i><i style=\"height:55%\"></i><i style=\"height:85%\"></i><i style=\"height:45%\"></i><i style=\"height:70%\"></i></span><span>Listening…</span></div>",
+      "css": ".ds-overlay { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 16px; border-radius: 9999px; background: #1d1d1f; color: #f5f5f7; font: 500 0.8rem 'Atkinson Hyperlegible Next', system-ui, sans-serif; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25), 0 14px 30px -12px rgb(0 0 0 / 0.5); } .ds-bars { display: flex; align-items: center; gap: 2px; height: 20px; } .ds-bars i { width: 3px; border-radius: 1px; background: currentColor; animation: ds-wave 1.1s ease-in-out infinite; } .ds-bars i:nth-child(2n) { animation-delay: -0.2s; } .ds-bars i:nth-child(3n) { animation-delay: -0.45s; } @keyframes ds-wave { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } } @media (prefers-reduced-motion: reduce) { .ds-bars i { animation: none; } }"
+    },
+    {
+      "name": "Marker",
+      "kind": "custom",
+      "description": "Words peluni put there: a Marker Teal stroke under the text.",
+      "html": "<p class=\"ds-marker-demo\">Move the demo to <mark class=\"ds-marker\">Friday at ten</mark>.</p>",
+      "css": ".ds-marker-demo { font: 1.5rem/1.3 'Source Serif 4', Georgia, serif; color: var(--foreground, #171a18); } .ds-marker { background: none; color: inherit; text-decoration: underline; text-decoration-color: var(--rec, #9ddeb9); text-decoration-thickness: 0.18em; text-underline-offset: -0.08em; text-decoration-skip-ink: none; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "description": "Wordmark left, underlined sans links right; the current page is semibold.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Features</a><a href=\"#\">How it works</a><a href=\"#\">FAQ</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; gap: 0 20px; font: 0.95rem 'Atkinson Hyperlegible Next', system-ui, sans-serif; } .ds-nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--foreground, #171a18); text-decoration: underline; text-decoration-color: var(--border, #cfd3cc); text-underline-offset: 4px; transition: text-decoration-color 0.15s; } .ds-nav a:hover, .ds-nav a[aria-current=page] { text-decoration-color: var(--foreground, #171a18); } .ds-nav a[aria-current=page] { font-weight: 600; } .ds-nav a:focus-visible { outline: 2px solid var(--foreground, #171a18); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Consent Panel",
+      "kind": "card",
+      "refersTo": "consent-panel",
+      "description": "A floating glass panel with capsule buttons.",
+      "html": "<div class=\"ds-panel\"><p>Allow analytics? Off unless you allow it.</p><div><button class=\"ds-p1\">Allow</button><button class=\"ds-p2\">No thanks</button></div></div>",
+      "css": ".ds-panel { max-width: 28rem; padding: 20px; border-radius: 28px; background: var(--glass-strong, rgb(246 247 243 / 0.93)); backdrop-filter: blur(16px) saturate(1.8); box-shadow: inset 0 1px 0 var(--glass-rim, #fff), inset 0 0 0 1px var(--glass-edge, rgb(0 0 0 / 0.1)), 0 28px 56px -24px rgb(0 0 0 / 0.5); font: 0.875rem/1.6 'Atkinson Hyperlegible Next', system-ui, sans-serif; color: var(--foreground, #171a18); } .ds-panel p { margin: 0; } .ds-panel div { display: flex; gap: 12px; margin-top: 16px; } .ds-panel button { flex: 1; min-height: 44px; border: 0; border-radius: 9999px; font-weight: 600; cursor: pointer; } .ds-p1 { background: var(--foreground, #171a18); color: var(--background, #f1f2ee); } .ds-p2 { background: color-mix(in srgb, var(--foreground, #171a18) 8%, transparent); color: var(--foreground, #171a18); } .ds-panel button:focus-visible { outline: 2px solid var(--foreground, #171a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Appearance Switch",
+      "kind": "custom",
+      "description": "macOS Appearance (Auto, Light, Dark) as a segmented control with a spring-stretch thumb.",
+      "html": "<fieldset class=\"ds-appearance\"><legend>Appearance</legend><span class=\"ds-thumb\"></span><label><input type=\"radio\" name=\"ds-ap\" checked><svg viewBox=\"0 0 20 20\"><circle cx=\"10\" cy=\"10\" r=\"6.75\"/><path d=\"M10 3.25a6.75 6.75 0 0 0 0 13.5z\" fill=\"currentColor\" stroke=\"none\"/></svg></label><label><input type=\"radio\" name=\"ds-ap\"><svg viewBox=\"0 0 20 20\"><circle cx=\"10\" cy=\"10\" r=\"3.4\"/><path d=\"M10 2.2v1.9M10 15.9v1.9M2.2 10h1.9M15.9 10h1.9M4.5 4.5l1.35 1.35M14.15 14.15l1.35 1.35M4.5 15.5l1.35-1.35M14.15 5.85l1.35-1.35\"/></svg></label><label><input type=\"radio\" name=\"ds-ap\"><svg viewBox=\"0 0 20 20\"><path d=\"M15.9 12.6A6.6 6.6 0 0 1 7.4 4.1a6.6 6.6 0 1 0 8.5 8.5z\"/></svg></label></fieldset>",
+      "css": ".ds-appearance { position: relative; display: flex; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 9999px; background: color-mix(in srgb, var(--foreground, #171a18) 6%, transparent); --i: 0; } .ds-appearance:has(label:nth-of-type(2) input:checked) { --i: 1; } .ds-appearance:has(label:nth-of-type(3) input:checked) { --i: 2; } .ds-appearance legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .ds-thumb { position: absolute; top: 4px; bottom: 4px; left: calc(4px + var(--i) * 44px); right: calc(4px + (2 - var(--i)) * 44px); border-radius: 9999px; background: var(--thumb, #fff); box-shadow: inset 0 1px 0 var(--glass-rim, #fff), 0 0 0 0.5px rgb(0 0 0 / 0.08), 0 2px 6px -1px rgb(0 0 0 / 0.22); transition: left 0.5s cubic-bezier(0.3, 1.3, 0.5, 1), right 0.34s cubic-bezier(0.3, 1.3, 0.5, 1); } .ds-appearance label { position: relative; display: flex; width: 44px; align-items: center; justify-content: center; color: color-mix(in srgb, var(--foreground, #171a18) 60%, transparent); cursor: pointer; } .ds-appearance label:has(input:checked) { color: var(--foreground, #171a18); } .ds-appearance label:has(input:focus-visible) { outline: 2px solid var(--foreground, #171a18); outline-offset: 2px; border-radius: 9999px; } .ds-appearance input { position: absolute; opacity: 0; } .ds-appearance svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; } @media (prefers-reduced-motion: reduce) { .ds-thumb { transition: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Desk and the Window",
+    "overview": "The page is a desk: grey-green paper, green-black ink, text set in a serif at reading size, sections divided by a rule or by space and never by a box. On that desk sit a few macOS windows, and they are the only things that lift off it. Each window shows peluni doing its one job (Reminders mid-dictation, the Vocabulary tab, a Messages reply with Wi-Fi off). The contrast between flat paper and real window is the whole idea: the page is the explanation, the windows are the evidence.\n\nDensity is low and the reading column is narrow (42rem). Sections take the form their content needs: a ruled table for cleanup levels, a window beside a sentence for vocabulary, one dark band for the privacy claim, a numbered list for building it. The interface parts (buttons, chips, the header) are plain and native: macOS 27 capsule buttons and real window chrome, nothing styled beyond what the platform does.\n\nThe windows follow macOS 27: 24px corners, no title-bar divider, traffic lights inset, and subtle Liquid Glass on what macOS puts it on (toolbar controls, floating panels and modules, the navigation layer). Glass belongs to the windows and the layer above the page, never to the paper.",
+    "keyCharacteristics": [
+      "Flat paper, lifted windows. Only windows and what floats above the page cast a shadow.",
+      "One accent, Marker Teal, used as a fill or a stroke, never as text.",
+      "Three typefaces with fixed jobs: serif to read, sans for the interface, mono for transcripts.",
+      "Light and dark are equal citizens. Dark is charcoal, not black.",
+      "Motion only where the product is working: the waveform, the caret, the record light, the demo loop."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Marker Teal is the only color with a meaning. A new colored element needs a reason the existing ones don't cover.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Never Fades Rule",
+        "body": "Paragraphs are full Ink. Muted Ink is for labels of a few words.",
+        "section": "colors"
+      },
+      {
+        "name": "The Equal Themes Rule",
+        "body": "Every token has a dark value, and every text pair reaches 4.5:1 in both themes (tested).",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Headings are sentence case at weight 600, balanced with `text-wrap: balance`. No italic accent word, no eyebrow above, no all-caps label.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lowercase Name Rule",
+        "body": "\"peluni\" is lowercase everywhere, including at the start of a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Only Windows Lift Rule",
+        "body": "A shadow means \"this is a macOS window, or it floats above the page\". If it isn't one, it is flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glass Is Platform Rule",
+        "body": "Glass appears only where macOS puts it, and only as much as macOS shows. If it draws attention to itself, there is too much. The recording overlay stays solid, because the real one is.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep body text full Ink at 1.1875rem or more, in a column of 42rem at most.",
+      "Do use Marker Teal as a fill or stroke for something peluni did, and nowhere else.",
+      "Do build window chrome from `WindowChrome.tsx`: 24px corners, no divider, inset traffic lights, the Window shadow and a label.",
+      "Do check mockups against the app's source (tab names, labels like `sounds like: pell oony`).",
+      "Do stop every looping animation under `prefers-reduced-motion: reduce`.",
+      "Do check light, dark, 390px and reduced motion before calling a visual change done.",
+      "Do keep Liquid Glass to toolbar controls, floating panels and modules, and the sticky header, with the solid fallback for reduced transparency and increased contrast."
+    ],
+    "donts": [
+      "Don't use gradients, gradient text, glow blobs, mesh or noise backgrounds, or colored shadows.",
+      "Don't add eyebrow labels, hero pill badges, trust-chip rows, icon-card grids, bento grids, section numbers, a final CTA band or a giant footer wordmark.",
+      "Don't put a card or shadow on anything that isn't a window or a floating panel.",
+      "Don't use capsules outside macOS parts; no pill labels or badges.",
+      "Don't put glass on paper, a section, or the phone header where nothing scrolls under it.",
+      "Don't fade sections up on scroll, add marquees or lift things on hover.",
+      "Don't put glass on the recording overlay; the real one is solid.",
+      "Don't redraw, recolor or relock the logomark and wordmark."
+    ]
+  }
+}

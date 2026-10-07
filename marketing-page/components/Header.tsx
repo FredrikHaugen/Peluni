@@ -1,3 +1,4 @@
+import { AppearanceSwitch } from "@/components/AppearanceSwitch";
 import { Wordmark } from "@/components/Wordmark";
 import { PAGES } from "@/lib/pages";
 
@@ -5,17 +6,19 @@ import { PAGES } from "@/lib/pages";
 const LINK =
   "inline-flex min-h-11 items-center underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground";
 
-// The wordmark home and the main pages. Wraps onto a second row on a phone.
+// The wordmark home, the main pages and the appearance switch. On a phone the switch shares the
+// wordmark's row and the pages wrap onto a second one. From 640 px it stays at the
+// top on glass, the navigation layer above the page, and the page scrolls under it.
 export function Header({ current }: { current?: string }) {
   return (
-    <header className="border-b border-border px-4 sm:px-6">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-0 py-2">
+    <header className="glass-header z-40 border-b border-border px-4 sm:sticky sm:top-0 sm:px-6">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-0 py-2 sm:gap-x-5">
         {/* Plain links between pages: each page is a static file, and hydration waits for load anyway. */}
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/" className="flex min-h-11 items-center rounded-sm">
           <Wordmark />
         </a>
-        <nav aria-label="Main" className="flex flex-wrap items-center gap-x-5 gap-y-0 font-sans text-[0.95rem]">
+        <nav aria-label="Main" className="order-3 flex basis-full flex-wrap items-center gap-x-5 gap-y-0 font-sans text-[0.95rem] sm:order-none sm:ml-auto sm:basis-auto">
           {PAGES.filter((p) => p.header).map((p) => (
             <a
               key={p.path}
@@ -27,6 +30,7 @@ export function Header({ current }: { current?: string }) {
             </a>
           ))}
         </nav>
+        <AppearanceSwitch className="order-2 sm:order-none" />
       </div>
     </header>
   );

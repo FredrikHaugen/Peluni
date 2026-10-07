@@ -18,7 +18,7 @@ export function Install() {
             <span aria-hidden="true" className="font-sans font-semibold text-muted">
               {i + 1}
             </span>
-            <span>
+            <span className="min-w-0">
               <Inlines parts={step} />
             </span>
           </li>

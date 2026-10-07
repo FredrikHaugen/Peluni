@@ -25,7 +25,9 @@ scripts, fonts and images out of the shipped HTML.
 **Look:** grey-green paper, charcoal in dark mode, Source Serif 4 for reading, Atkinson Hyperlegible
 Next for the interface and Atkinson Hyperlegible Mono for transcripts (all self-hosted, see
 `app/fonts/README.md`). The logo teal is the one accent: the record light, and the marker under
-words peluni put there. The logomark is `components/Logomark.tsx`; favicons are `app/favicon.ico`,
+words peluni put there. Window mockups follow macOS 27: 24 px corners, inset traffic lights and
+subtle Liquid Glass on toolbar controls, floating panels and the sticky header (`.glass` in
+`app/globals.css`, solid under reduced transparency). The logomark is `components/Logomark.tsx`; favicons are `app/favicon.ico`,
 `app/icon.svg` and `app/apple-icon.png`.
 
 The share image is `app/opengraph-image.png` (1200×630, with its alt text in

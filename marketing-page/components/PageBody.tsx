@@ -12,7 +12,7 @@ export function Inlines({ parts }: { parts: readonly Inline[] }) {
         typeof part === "string" ? (
           <Fragment key={i}>{part}</Fragment>
         ) : "code" in part ? (
-          <code key={i} className="font-mono text-[0.9em]">
+          <code key={i} className="font-mono text-[0.9em] [overflow-wrap:anywhere]">
             {part.code}
           </code>
         ) : (
@@ -102,15 +102,15 @@ function OnThisPage({
   return (
     <nav
       aria-label={PAGE_NAV.onThisPage}
-      className={`${indexOnPhone ? "mt-10 border-y border-border py-5" : "hidden"} font-sans text-[0.95rem] lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1 lg:mt-14 lg:block lg:self-start lg:border-y-0 lg:border-l lg:py-0 lg:pl-6`}
+      className={`${indexOnPhone ? "mt-10 border-y border-border py-5" : "hidden"} font-sans text-[0.95rem] lg:sticky lg:top-24 lg:col-start-2 lg:row-start-1 lg:mt-14 lg:block lg:self-start lg:border-y-0 lg:border-l lg:py-0 lg:pl-6`}
     >
       <p className="font-semibold">{PAGE_NAV.onThisPage}</p>
-      <ul className="mt-3 grid gap-2">
+      <ul className="mt-1 grid lg:mt-3 lg:gap-1">
         {sections.map((section) => (
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              className="text-muted underline-offset-4 hover:text-foreground hover:underline"
+              className="inline-flex min-h-11 items-center text-muted underline-offset-4 hover:text-foreground hover:underline lg:min-h-0 lg:py-1"
             >
               {section.heading}
             </a>
@@ -147,7 +147,7 @@ export function PageBody({
               key={section.id}
               id={section.id}
               aria-labelledby={`${section.id}-title`}
-              className={`scroll-mt-6 ${compact ? "pt-10" : "pt-14 sm:pt-16"}`}
+              className={`scroll-mt-6 sm:scroll-mt-20 ${compact ? "pt-10" : "pt-14 sm:pt-16"}`}
             >
               <h2 id={`${section.id}-title`} className={heading}>
                 {section.heading}

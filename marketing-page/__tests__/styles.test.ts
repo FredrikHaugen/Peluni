@@ -26,7 +26,7 @@ test("every color token is defined for dark mode too", () => {
     "--logo-tile",
     "--logo-stroke",
   ];
-  const dark = css.slice(css.indexOf("@media (prefers-color-scheme: dark)"));
+  const dark = css.slice(css.indexOf(':root[data-theme="dark"] {'));
   for (const token of tokens) {
     expect(css).toContain(`${token}:`);
     expect(dark).toContain(`${token}:`);
@@ -55,7 +55,7 @@ test("the template devices are gone", () => {
 
 test("the token blocks hold only custom properties", () => {
   const light = css.slice(css.indexOf(":root {"), css.indexOf("}", css.indexOf(":root {")));
-  const darkStart = css.indexOf(":root {", css.indexOf("@media (prefers-color-scheme: dark)"));
+  const darkStart = css.indexOf(':root[data-theme="dark"] {');
   const dark = css.slice(darkStart, css.indexOf("}", darkStart));
   for (const block of [light, dark]) {
     const lines = block.split("\n").slice(1).map((l) => l.trim()).filter(Boolean);

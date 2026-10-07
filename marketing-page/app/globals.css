@@ -26,26 +26,54 @@
   --logo-tile: #d9d9d9;
   --logo-stroke: #141413;
   --logo-rim: transparent;
+  /* Liquid Glass, as macOS draws it: a thin tint, a bright top rim, a dark hairline edge. */
+  --glass: rgb(255 255 255 / 0.56);
+  --glass-strong: rgb(246 247 243 / 0.78);
+  --glass-rim: rgb(255 255 255 / 0.9);
+  --glass-edge: rgb(23 26 24 / 0.1);
+  /* A window's inner top highlight: none on paper, a faint one on charcoal. */
+  --window-rim: rgb(255 255 255 / 0);
+  /* Glass on charcoal, defined once: the dark theme and the dark band both use it. */
+  --glass-dark: rgb(58 62 56 / 0.5);
+  --glass-strong-dark: rgb(30 32 29 / 0.76);
+  --glass-panel-dark: rgb(30 32 29 / 0.92);
+  --glass-rim-dark: rgb(255 255 255 / 0.14);
+  --glass-edge-dark: rgb(0 0 0 / 0.45);
+  --window-rim-dark: rgb(255 255 255 / 0.08);
+  --glass-panel: rgb(246 247 243 / 0.93);
+  /* The Messages scene keeps Apple's light appearance in both themes. */
+  --mac-label: #1d1d1f;
+  --mac-secondary: #48484a;
+  --mac-bubble: #e9e9eb;
+  /* The appearance switch's sliding thumb. */
+  --thumb: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1e1b;
-    --foreground: #eceee9;
-    --muted: #a8ada6;
-    --card: #262924;
-    --border: #3a3e38;
-    --desk: #2c302a;
-    --select: #3a6ea8;
-    --select-foreground: #f4f6f2;
-    --rec: #9ddeb9;
-    --overlay: #1d1d1f;
-    --overlay-foreground: #f5f5f7;
-    /* brand/logomarkDark.svg */
-    --logo-tile: #141413;
-    --logo-stroke: #d9d9d9;
-    --logo-rim: #3a3e38;
-  }
+/* Dark appearance. The inline script in app/layout.tsx sets data-theme before the first paint: the
+   visitor's pick from the appearance switch, or the system setting when they leave it on Auto. */
+:root[data-theme="dark"] {
+  --background: #1c1e1b;
+  --foreground: #eceee9;
+  --muted: #a8ada6;
+  --card: #262924;
+  --border: #3a3e38;
+  --desk: #2c302a;
+  --select: #3a6ea8;
+  --select-foreground: #f4f6f2;
+  --rec: #9ddeb9;
+  --overlay: #1d1d1f;
+  --overlay-foreground: #f5f5f7;
+  /* brand/logomarkDark.svg */
+  --logo-tile: #141413;
+  --logo-stroke: #d9d9d9;
+  --logo-rim: #3a3e38;
+  --glass: var(--glass-dark);
+  --glass-strong: var(--glass-strong-dark);
+  --glass-panel: var(--glass-panel-dark);
+  --glass-rim: var(--glass-rim-dark);
+  --glass-edge: var(--glass-edge-dark);
+  --window-rim: var(--window-rim-dark);
+  --thumb: rgb(255 255 255 / 0.17);
 }
 
 @theme inline {
@@ -70,6 +98,10 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -98,7 +130,16 @@ h3 {
 :focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: 3px;
-  border-radius: 4px;
+}
+/* The skip link's target is the whole page; focusing it needs no ring. */
+#main:focus {
+  outline: none;
+}
+/* Links get a softened ring; anything with its own radius (capsule buttons, windows) keeps it. */
+@layer base {
+  :focus-visible {
+    border-radius: 4px;
+  }
 }
 
 /* Keycap: flat top, deeper bottom edge. */
@@ -118,14 +159,17 @@ h3 {
   --border: #3a3e38;
   --select: #3a6ea8;
   --select-foreground: #f4f6f2;
+  --glass: var(--glass-dark);
+  --glass-strong: var(--glass-strong-dark);
+  --glass-rim: var(--glass-rim-dark);
+  --glass-edge: var(--glass-edge-dark);
+  --window-rim: var(--window-rim-dark);
   background: var(--background);
   color: var(--foreground);
 }
-@media (prefers-color-scheme: dark) {
-  .band-dark {
-    --background: #121311;
-    --card: #1f211e;
-  }
+:root[data-theme="dark"] .band-dark {
+  --background: #121311;
+  --card: #1f211e;
 }
 
 /* The desk behind the audio path. */
@@ -146,12 +190,201 @@ h3 {
   text-decoration-skip-ink: none;
 }
 
-/* A product window on the desk. Plain black shadows read correctly in both themes. */
+/* A product window on the desk. Plain black shadows read correctly in both themes; on charcoal a
+   faint top highlight keeps the edge from sinking into the page. */
 .window-shadow {
   box-shadow:
+    inset 0 1px 0 var(--window-rim),
     0 0 0 1px rgb(0 0 0 / 0.08),
-    0 30px 60px -28px rgb(0 0 0 / 0.45),
-    0 10px 20px -12px rgb(0 0 0 / 0.25);
+    0 34px 70px -30px rgb(0 0 0 / 0.5),
+    0 12px 24px -14px rgb(0 0 0 / 0.28);
+}
+
+/*
+ * Liquid Glass, kept to what macOS puts it on: window toolbars, floating controls and panels that sit
+ * above content. Blur and saturation pick up what passes underneath; the rim and edge are the
+ * material's highlight and hairline, not a border. `.glass-strong` carries text, so its tint is
+ * thicker. Reduced transparency and increased contrast get solid surfaces, as they do in macOS.
+ */
+.glass,
+.glass-strong {
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
+  backdrop-filter: blur(16px) saturate(1.8);
+}
+.glass {
+  background: var(--glass);
+  box-shadow:
+    inset 0 1px 0 var(--glass-rim),
+    inset 0 0 0 1px var(--glass-edge),
+    0 6px 16px -8px rgb(0 0 0 / 0.3);
+}
+.glass-strong {
+  background: var(--glass-strong);
+}
+/* The consent panel can sit over the dark band; a thicker tint keeps it one even surface there. */
+.glass-panel {
+  --glass-strong: var(--glass-panel);
+}
+/* The header is flat paper on a phone, where it scrolls away, and glass from 640 px, where it stays. */
+.glass-header {
+  background: var(--background);
+}
+@media (min-width: 40rem) {
+  .glass-header {
+    background: var(--glass-strong);
+    -webkit-backdrop-filter: blur(16px) saturate(1.8);
+    backdrop-filter: blur(16px) saturate(1.8);
+  }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass,
+  .glass-strong,
+  .glass-header {
+    background: var(--card);
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .glass,
+  .glass-strong,
+  .glass-header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--card);
+  }
+}
+
+/* Forced colors drop backgrounds and shadows; windows and floating glass get a system-colored edge. */
+@media (forced-colors: active) {
+  .window-shadow,
+  .glass {
+    outline: 1px solid CanvasText;
+  }
+}
+
+/* Control Center's Wi-Fi module floats over the desktop in light appearance in both themes, like the
+   Messages window under it. Its tint is thick enough to keep text readable over the dark band. */
+.glass-light {
+  --glass: rgb(255 255 255 / 0.72);
+  --glass-rim: rgb(255 255 255 / 0.95);
+  --glass-edge: rgb(0 0 0 / 0.12);
+  --card: #f5f5f7;
+}
+
+/*
+ * The appearance switch (components/AppearanceSwitch.tsx): three 44 px segments on a tinted track and
+ * a round thumb that slides between them on a spring. Its two edges travel on different clocks, the
+ * leading edge first, so it stretches toward the new segment and settles, like a macOS 27 control.
+ */
+.appearance {
+  --i: 0;
+  --spring: cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+html[data-appearance="light"] .appearance {
+  --i: 1;
+}
+html[data-appearance="dark"] .appearance {
+  --i: 2;
+}
+/* Without the script there's no theme to switch, so the control isn't shown. */
+html:not([data-appearance]) .appearance {
+  display: none;
+}
+.appearance-thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: calc(4px + var(--i) * 2.75rem);
+  right: calc(4px + (2 - var(--i)) * 2.75rem);
+  border-radius: 9999px;
+  background: var(--thumb);
+  box-shadow:
+    inset 0 1px 0 var(--glass-rim),
+    0 0 0 0.5px rgb(0 0 0 / 0.08),
+    0 2px 6px -1px rgb(0 0 0 / 0.22);
+  transition:
+    left 0.5s var(--spring),
+    right 0.5s var(--spring);
+}
+html[data-appearance-dir="right"] .appearance-thumb {
+  transition:
+    right 0.34s var(--spring),
+    left 0.52s var(--spring) 0.05s;
+}
+html[data-appearance-dir="left"] .appearance-thumb {
+  transition:
+    left 0.34s var(--spring),
+    right 0.52s var(--spring) 0.05s;
+}
+.appearance-option:has(input:focus-visible) {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+.appearance-option:has(input:checked) {
+  color: var(--foreground);
+}
+
+/* The icon that was just picked moves the way its SF Symbol would: the sun's rays turn in, the moon
+   rocks into place, the half circle turns over. Only after a click, never on page load. */
+.appearance-moved .appearance-option:has(input:checked) .sym-rays {
+  animation: sym-rays 0.6s var(--spring);
+}
+.appearance-moved .appearance-option:has(input:checked) .sym-core,
+.appearance-moved .appearance-option:has(input:checked) .sym-moon {
+  animation: sym-bounce 0.5s var(--spring);
+}
+.appearance-moved .appearance-option:has(input:checked) .sym-moon {
+  animation-name: sym-rock;
+}
+.appearance-moved .appearance-option:has(input:checked) .sym-half {
+  animation: sym-turn 0.55s var(--spring);
+}
+.sym-rays,
+.sym-core,
+.sym-moon,
+.sym-half {
+  transform-box: view-box;
+  transform-origin: center;
+}
+@keyframes sym-rays {
+  from {
+    transform: rotate(-60deg) scale(0.55);
+    opacity: 0.2;
+  }
+}
+@keyframes sym-bounce {
+  40% {
+    transform: scale(0.82);
+  }
+}
+@keyframes sym-rock {
+  0% {
+    transform: rotate(-35deg) scale(0.8);
+  }
+  60% {
+    transform: rotate(8deg) scale(1.05);
+  }
+}
+@keyframes sym-turn {
+  from {
+    transform: rotate(-180deg);
+  }
+}
+
+/* Changing appearance crossfades the page (View Transitions), except the switch itself, which stays
+   live so the thumb's slide is seen. */
+.appearance {
+  view-transition-name: appearance-switch;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.32s;
+  animation-timing-function: ease-out;
+}
+::view-transition-old(appearance-switch) {
+  display: none;
+}
+::view-transition-new(appearance-switch) {
+  animation: none;
 }
 
 @keyframes wave {
@@ -264,6 +497,7 @@ h3 {
   }
   .caret,
   .rec-dot,
+  .appearance-thumb,
   .demo-heard,
   .demo-paste,
   *,

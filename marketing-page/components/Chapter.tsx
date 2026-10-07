@@ -19,7 +19,7 @@ export function Chapter({
 }) {
   const headingId = `${id}-title`;
   return (
-    <section id={id} aria-labelledby={headingId} className={`scroll-mt-6 px-4 sm:px-6 ${className}`}>
+    <section id={id} aria-labelledby={headingId} className={`scroll-mt-6 px-4 sm:scroll-mt-20 sm:px-6 ${className}`}>
       <div className="mx-auto max-w-5xl">
         <div className={wide ? "" : "max-w-2xl"}>
           <h2

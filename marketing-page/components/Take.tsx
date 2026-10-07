@@ -1,4 +1,5 @@
 import { OverlayPill } from "@/components/OverlayPill";
+import { GlassControls, Toolbar, ToolbarIcon } from "@/components/WindowChrome";
 import { USING } from "@/lib/content";
 
 function Check() {
@@ -12,16 +13,24 @@ export function Take() {
   const { window: w } = USING;
   const raw = w.raw.split(" ");
   return (
-    <figure aria-label={USING.sceneLabel} className="window-shadow mt-12 overflow-hidden rounded-xl bg-card font-sans">
-      <p className="relative border-b border-border px-4 py-2 text-center text-[0.8rem] font-semibold text-foreground/80">
-        <span aria-hidden="true" className="absolute left-3 top-1/2 flex -translate-y-1/2 gap-1.5">
-          <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-          <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-          <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-        </span>
-        {w.app}
-      </p>
-      <div className="px-6 pb-6 pt-5 sm:px-12 sm:pt-7">
+    <figure aria-label={USING.sceneLabel} className="window-shadow mt-12 overflow-hidden rounded-[1.5rem] bg-card font-sans">
+      <Toolbar
+        title={w.app}
+        className="px-5 pt-1"
+        trailing={
+          <GlassControls>
+            {/* Show completed, then add a reminder. */}
+            <ToolbarIcon>
+              <circle cx="10" cy="10" r="6.5" />
+              <path d="M7.2 10.2l1.9 1.9 3.8-4" />
+            </ToolbarIcon>
+            <ToolbarIcon>
+              <path d="M10 4.5v11M4.5 10h11" />
+            </ToolbarIcon>
+          </GlassControls>
+        }
+      />
+      <div className="px-6 pb-7 pt-2 sm:px-12 sm:pt-3">
         <p className="text-[clamp(1.6rem,1.3rem+1.2vw,2.3rem)] font-bold tracking-[-0.01em]">{w.list}</p>
         <ul className="mt-3 text-[clamp(1.1rem,0.95rem+0.6vw,1.45rem)]">
           {w.earlier.map((item) => (
@@ -47,10 +56,10 @@ export function Take() {
             </span>
           </li>
           {/* The next one, while you say it. */}
-          <li className="flex items-center gap-3 pt-3">
+          <li className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-3">
             <span aria-hidden="true" className="h-[1.1em] w-[1.1em] shrink-0 rounded-full border-[1.5px] border-foreground/35" />
             <span aria-hidden="true" className="caret inline-block h-[1.1em] w-[2px] bg-foreground" />
-            <span className="ml-3">
+            <span className="ml-3 max-w-full">
               <OverlayPill />
             </span>
           </li>

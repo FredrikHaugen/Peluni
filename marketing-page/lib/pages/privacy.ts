@@ -1,5 +1,5 @@
 import type { PageCopy } from "@/lib/blocks";
-import { ANALYTICS, SITE } from "@/lib/site";
+import { ANALYTICS, SITE, APPEARANCE } from "@/lib/site";
 
 // Sources: the app (no network code beyond Hugging Face downloads; NSLog records states and lengths;
 // history in memory), components/AnalyticsConsent.tsx, Microsoft's Clarity cookie list
@@ -128,6 +128,11 @@ export const PRIVACY: PageCopy & { updated: string; updatedLabel: string } = {
         {
           p: [
             `Your answer to the banner is saved in your browser's local storage, not in a cookie. Change it any time with ${ANALYTICS.settings} at the bottom of every page. Choosing ${ANALYTICS.decline} after allowing analytics also deletes the Google Analytics cookies.`,
+          ],
+        },
+        {
+          p: [
+            `If you pick ${APPEARANCE.options[1].label} or ${APPEARANCE.options[2].label} with the appearance switch at the top of every page, that choice is saved in your browser's local storage too, and never leaves it. ${APPEARANCE.options[0].label} saves nothing.`,
           ],
         },
       ],

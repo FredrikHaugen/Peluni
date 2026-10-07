@@ -45,6 +45,18 @@ export const PHONE = {
   copied: "Link copied. Open it on your Mac.",
 } as const;
 
+// The appearance switch in the header, named and ordered as in macOS (System Settings > Appearance).
+// Auto follows the Mac; a Light or Dark pick is kept in local storage under storageKey (privacy.ts).
+export const APPEARANCE = {
+  legend: "Appearance",
+  storageKey: "peluni-appearance",
+  options: [
+    { value: "auto", label: "Auto" },
+    { value: "light", label: "Light" },
+    { value: "dark", label: "Dark" },
+  ],
+} as const;
+
 // Opt-in page analytics. Nothing from Clarity or Google Analytics loads, and no cookie is set, until the
 // visitor allows it.
 export const ANALYTICS = {

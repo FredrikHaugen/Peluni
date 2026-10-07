@@ -24,7 +24,7 @@ export default function ChangelogPage() {
                 key={release.version}
                 id={id}
                 aria-labelledby={`${id}-title`}
-                className="max-w-2xl scroll-mt-6 pt-14 sm:pt-16"
+                className="max-w-2xl scroll-mt-6 pt-14 sm:scroll-mt-20 sm:pt-16"
               >
                 <h2
                   id={`${id}-title`}

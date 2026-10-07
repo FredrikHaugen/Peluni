@@ -103,6 +103,10 @@ export const CLEANUP_LEVELS = {
 export const WORDS = {
   title: "Vocabulary",
   vocabTitle: "Vocabulary",
+  // The Settings window's tabs, in order (Sources/PeluniApp/UI/SettingsView.swift).
+  tabs: ["General", "Models", "Vocabulary", "Permissions", "Advanced"],
+  // How a row shows its aliases (VocabularyTab.swift): "sounds like: pell oony".
+  soundsLikeLabel: "sounds like",
   vocabBody:
     "Add the words whisper keeps getting wrong, like your colleagues' names or the acronyms your team uses. peluni passes them to whisper as hints, and any alias you list under “sounds like” is replaced the same way every time.",
   terms: [
@@ -205,4 +209,5 @@ export const FOOTER_NOTE = {
 // Sub-page furniture (components/PageBody.tsx).
 export const PAGE_NAV = {
   onThisPage: "On this page",
+  skip: "Skip to content",
 } as const;

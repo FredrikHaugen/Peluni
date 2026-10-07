@@ -4,7 +4,8 @@ import { describe, expect, test } from "vitest";
 
 // Reads the color tokens straight from globals.css and checks the pairs the site actually uses.
 const css = readFileSync(resolve(process.cwd(), "app/globals.css"), "utf8");
-const darkAt = css.indexOf("@media (prefers-color-scheme: dark)");
+// The dark tokens live in one block, applied by data-theme (lib/appearance-script.ts).
+const darkAt = css.indexOf(':root[data-theme="dark"] {');
 const themeAt = css.indexOf("@theme inline");
 
 function tokens(block: string) {
