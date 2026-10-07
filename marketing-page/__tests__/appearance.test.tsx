@@ -4,6 +4,7 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { AppearanceSwitch } from "@/components/AppearanceSwitch";
 import { APPEARANCE_SCRIPT } from "@/lib/appearance-script";
+import { noScriptDarkCss } from "@/lib/no-script-dark";
 import { PRIVACY } from "@/lib/pages/privacy";
 import { APPEARANCE } from "@/lib/site";
 
@@ -74,6 +75,21 @@ describe("appearance switch", () => {
     const text = JSON.stringify(PRIVACY);
     expect(text).toContain("appearance switch");
     expect(text).toContain("local storage");
+  });
+
+  test("without JavaScript the page still follows the Mac's dark mode, from the same tokens", () => {
+    const dark = css.slice(css.indexOf(':root[data-theme="dark"] {'));
+    const background = dark.match(/--background: (#[0-9a-f]{6})/)![1];
+    const fallback = noScriptDarkCss();
+    expect(fallback).toMatch(/^@media \(prefers-color-scheme: dark\)/);
+    expect(fallback).toContain(`--background: ${background}`);
+    expect(fallback).toContain(":root:not([data-theme]) .band-dark");
+  });
+
+  test("forced-colors mode shows the pick in system highlight colors", () => {
+    const forced = css.slice(css.indexOf("@media (forced-colors: active)"));
+    expect(forced).toMatch(/\.appearance-thumb\s*\{[^}]*background: Highlight/);
+    expect(forced).toMatch(/input:checked\)\s*\{[^}]*color: HighlightText/);
   });
 
   test("its motion stops for reduced-motion users", () => {

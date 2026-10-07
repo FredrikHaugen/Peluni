@@ -195,10 +195,12 @@ h3 {
   }
 }
 
-/* Reading text avoids one-word last lines. */
+/* Reading text avoids one-word last lines, and a long unbroken string (an ID, a path) breaks rather
+   than pushing past the edge, where the body's overflow clip would hide it. */
 p,
 li {
   text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 /* Words peluni put there: vocabulary terms, and the reminder that just landed. A teal marker stroke
@@ -277,11 +279,21 @@ li {
   }
 }
 
-/* Forced colors drop backgrounds and shadows; windows and floating glass get a system-colored edge. */
+/* Forced colors drop backgrounds and shadows; windows and floating glass get a system-colored edge,
+   and the appearance switch draws its pick in the system highlight colors. */
 @media (forced-colors: active) {
   .window-shadow,
-  .glass {
+  .glass,
+  .appearance {
     outline: 1px solid CanvasText;
+  }
+  .appearance-thumb {
+    forced-color-adjust: none;
+    background: Highlight;
+  }
+  .appearance-option:has(input:checked) {
+    forced-color-adjust: none;
+    color: HighlightText;
   }
 }
 
@@ -301,7 +313,13 @@ li {
  */
 .appearance {
   --i: 0;
-  --spring: cubic-bezier(0.3, 1.3, 0.5, 1);
+  --spring: cubic-bezier(0.3, 1.15, 0.5, 1);
+}
+/* A damped spring (damping ratio 0.8, about 1.5% overshoot), sampled into linear(). */
+@supports (transition-timing-function: linear(0, 1)) {
+  .appearance {
+    --spring: linear(0, 0.065, 0.209, 0.377, 0.539, 0.678, 0.789, 0.872, 0.931, 0.97, 0.994, 1.007, 1.014, 1.015, 1.014, 1.012, 1.01, 1.007, 1.005, 1.003, 1);
+  }
 }
 html[data-appearance="light"] .appearance {
   --i: 1;
@@ -331,13 +349,13 @@ html:not([data-appearance]) .appearance {
 }
 html[data-appearance-dir="right"] .appearance-thumb {
   transition:
-    right 0.34s var(--spring),
-    left 0.52s var(--spring) 0.05s;
+    right 0.36s var(--spring),
+    left 0.46s var(--spring) 0.02s;
 }
 html[data-appearance-dir="left"] .appearance-thumb {
   transition:
-    left 0.34s var(--spring),
-    right 0.52s var(--spring) 0.05s;
+    left 0.36s var(--spring),
+    right 0.46s var(--spring) 0.02s;
 }
 .appearance-option:has(input:focus-visible) {
   outline: 2px solid var(--foreground);

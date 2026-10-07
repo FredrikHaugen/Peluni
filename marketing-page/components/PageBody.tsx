@@ -36,7 +36,7 @@ function BlockView({ block }: { block: Block }) {
     const List = block.ordered ? "ol" : "ul";
     return (
       <List
-        className={`mt-5 grid gap-3 pl-6 ${block.ordered ? "list-decimal" : "list-disc"}`}
+        className={`mt-5 grid grid-cols-[minmax(0,1fr)] gap-3 pl-6 ${block.ordered ? "list-decimal" : "list-disc"}`}
       >
         {block.list.map((item, i) => (
           <li key={i}>

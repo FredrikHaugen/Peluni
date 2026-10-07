@@ -229,7 +229,8 @@ Everything works at 390px with no sideways scroll (`overflow-x: clip` on the bod
 clip hides overflow instead of scrolling it, components must reflow at large text sizes: inline
 code breaks anywhere when it has to, toolbar titles truncate before their controls do, and the
 listening row wraps the overlay under the cursor. Wide tables scroll inside their own container and set figures tabular, so sizes line up. Paragraphs
-and list items use `text-wrap: pretty`.
+and list items use `text-wrap: pretty` and `overflow-wrap: break-word`, and list columns can shrink
+(`minmax(0, 1fr)`), so a long ID or path breaks instead of pushing past the edge.
 Standalone links and buttons are at least 44px tall (the desktop "On this page" list is the one
 exception, at 28px).
 
@@ -317,16 +318,20 @@ a phone, beside the wordmark). Three 44px segments on an 6% Ink track; icons dra
 `circle.lefthalf.filled`, `sun.max` and `moon` at 18px, 60% Ink at rest, full Ink when chosen. A round
 thumb (white on paper, 17% white on charcoal, with the glass rim) marks the pick.
 
-- **Motion:** the thumb's two edges slide on a slight overshoot spring (`cubic-bezier(0.3, 1.3, 0.5, 1)`),
-  the leading edge in 0.34s and the trailing edge in 0.52s after 0.05s, so it stretches toward the new
-  segment and settles. The chosen icon then moves like its SF Symbol: the sun's rays turn in, the moon
+- **Motion:** the thumb's two edges slide on a damped spring (damping ratio 0.8, about 1.5% overshoot,
+  sampled into `linear()`; `cubic-bezier(0.3, 1.15, 0.5, 1)` where `linear()` isn't supported), the
+  leading edge in 0.36s and the trailing edge in 0.46s after 0.02s. It stretches toward the new segment
+  (to about 49px for one step, 62px for two) and settles at 36px. The chosen icon then moves like its SF Symbol: the sun's rays turn in, the moon
   rocks into place, the half circle turns over. The page crossfades in 0.32s through a View
   Transition, with the switch excluded so its slide stays visible. No motion on page load, and none
   under reduced motion.
 - **Mechanics:** plain radios, so click, tap and arrow keys work before any bundle loads. An inline
   script in `<head>` (`lib/appearance-script.ts`) sets `data-appearance` and `data-theme` on `<html>`
   before the first paint; dark tokens apply under `:root[data-theme="dark"]`. Auto follows the Mac live.
-  Without JavaScript the switch is hidden and the page stays light.
+  Without JavaScript the switch is hidden and a `<noscript>` style, generated at build time from the
+  same dark token block (`lib/no-script-dark.ts`), follows the Mac's setting.
+- **Forced colors:** the track gets a `CanvasText` outline, the thumb is drawn in `Highlight` and the
+  chosen icon in `HighlightText`, so the pick stays visible.
 
 ### Skip link
 

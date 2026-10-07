@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { AnalyticsConsent } from "@/components/AnalyticsConsent";
 import { APPEARANCE_SCRIPT } from "@/lib/appearance-script";
+import { noScriptDarkCss } from "@/lib/no-script-dark";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -48,6 +49,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: APPEARANCE_SCRIPT }} />
+        {/* JavaScript off: follow the Mac's dark mode from the same tokens. */}
+        <noscript dangerouslySetInnerHTML={{ __html: `<style>${noScriptDarkCss()}</style>` }} />
       </head>
       <body className="flex min-h-full flex-col">
         {children}
