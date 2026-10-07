@@ -228,7 +228,8 @@ text between two rules, or is hidden.
 Everything works at 390px with no sideways scroll (`overflow-x: clip` on the body). Because that
 clip hides overflow instead of scrolling it, components must reflow at large text sizes: inline
 code breaks anywhere when it has to, toolbar titles truncate before their controls do, and the
-listening row wraps the overlay under the cursor. Wide tables scroll inside their own container.
+listening row wraps the overlay under the cursor. Wide tables scroll inside their own container and set figures tabular, so sizes line up. Paragraphs
+and list items use `text-wrap: pretty`.
 Standalone links and buttons are at least 44px tall (the desktop "On this page" list is the one
 exception, at 28px).
 
@@ -334,12 +335,13 @@ thumb (white on paper, 17% white on charcoal, with the glass rim) marks the pick
 
 ### Links
 
-Underlined text, never a button. The underline sits 4px below the baseline at Hairline (or Ink at 40%)
-and turns full Ink on hover. The current page in the header is semibold with an Ink underline.
+Underlined text, never a button, styled once by `.link` in `globals.css`: the underline sits 4px below
+the baseline at 40% of the text's own color (so it works on muted text and in the dark band) and goes
+to full strength on hover, and on the header link for the current page, which is also semibold.
 
 ### Chips
 
-- **Default chip:** Marker Teal fill, Ink text (#171a18 in both themes), 6px radius, sans 600 at
+- **Default chip:** Marker Teal fill, `--rec-foreground` text (Ink in both themes), 6px radius, sans 600 at
   0.875rem. Used once, on the cleanup table's default level.
 
 ### Keycap

@@ -3,8 +3,7 @@ import { Wordmark } from "@/components/Wordmark";
 import { PAGES } from "@/lib/pages";
 
 // min-h-11: a 44 px tap target on a phone, where these wrap onto their own rows.
-const LINK =
-  "inline-flex min-h-11 items-center underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground";
+const LINK = "link inline-flex min-h-11 items-center";
 
 // The wordmark home, the main pages and the appearance switch. On a phone the switch shares the
 // wordmark's row and the pages wrap onto a second one. From 640 px it stays at the
@@ -24,7 +23,7 @@ export function Header({ current }: { current?: string }) {
               key={p.path}
               href={p.path}
               aria-current={p.path === current ? "page" : undefined}
-              className={p.path === current ? `${LINK} font-semibold decoration-foreground` : LINK}
+              className={p.path === current ? `${LINK} font-semibold` : LINK}
             >
               {p.nav}
             </a>

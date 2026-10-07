@@ -21,7 +21,7 @@ export function Cleanup() {
               <p className="text-lg font-semibold text-foreground">
                 {level.name}
                 {level.id === CLEANUP_LEVELS.defaultLevel && (
-                  <span className="ml-2 rounded-md bg-rec px-1.5 py-0.5 align-[0.1em] text-sm font-semibold text-[#171a18]">
+                  <span className="ml-2 rounded-md bg-rec px-1.5 py-0.5 align-[0.1em] text-sm font-semibold text-rec-foreground">
                     {CLEANUP_LEVELS.defaultNote}
                   </span>
                 )}

@@ -2,8 +2,7 @@ import { Fragment } from "react";
 import type { Block, Inline, Section } from "@/lib/blocks";
 import { PAGE_NAV } from "@/lib/content";
 
-const LINK =
-  "underline decoration-foreground/40 underline-offset-4 hover:decoration-foreground";
+const LINK = "link";
 
 export function Inlines({ parts }: { parts: readonly Inline[] }) {
   return (
@@ -50,7 +49,7 @@ function BlockView({ block }: { block: Block }) {
   const { caption, head, rows } = block.table;
   return (
     <div className="mt-6 overflow-x-auto">
-      <table className="w-full border-collapse text-left font-sans text-[1rem]">
+      <table className="w-full border-collapse text-left font-sans text-[1rem] tabular-nums">
         <caption className="sr-only">{caption}</caption>
         <thead>
           <tr>

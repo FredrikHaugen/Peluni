@@ -2819,3 +2819,41 @@
 [ 2490965ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
 [ 2513100ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
 [ 2513116ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2685313ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2685322ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2685398ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2685405ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2686747ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2686755ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2686833ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2686840ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2688093ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2688103ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2688182ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2688189ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2689461ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2689469ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2689552ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2689558ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2690768ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2690782ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2690822ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nope:0
+[ 2690838ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2690844ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2741115ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2741159ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nope?_rsc=7TmJZH1YHwSue7fr:0
+[ 2741172ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2741223ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2741240ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nope:0
+[ 2741272ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2741279ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2786778ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2786791ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2786852ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nope:0
+[ 2786886ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2786894ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2787950ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2787964ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2789136ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/nope:0
+[ 2789159ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776
+[ 2789167ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0ngd_next_dist_1goyb51._.js:776

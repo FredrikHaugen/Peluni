@@ -2,7 +2,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, test } from "vitest";
-import { FALLBACK_SYMBOLS, siteCharset } from "../scripts/font-charset.mjs";
+import { decode, FALLBACK_SYMBOLS, siteCharset } from "../scripts/font-charset.mjs";
 
 const font = (name: string) => resolve(process.cwd(), "app/fonts", `${name}.woff2`);
 const FONTS = ["source-serif-4-latin", "atkinson-hyperlegible-next-latin", "atkinson-hyperlegible-mono-latin"];
@@ -26,8 +26,8 @@ describe("font subsets", () => {
   });
 
   test("reads characters written as HTML entities in JSX", () => {
-    // app/not-found.tsx writes "There&rsquo;s"; the page renders a curly apostrophe.
-    expect(siteCharset()).toContain("’");
+    // JSX may write "There&rsquo;s"; the page renders a curly apostrophe, so that's what gets counted.
+    expect(decode("There&rsquo;s &#8230; &#x2318;")).toBe("There’s … ⌘");
   });
 
   test("always keeps printable ASCII", () => {

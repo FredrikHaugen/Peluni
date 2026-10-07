@@ -29,11 +29,11 @@ export function Install() {
       </p>
       <p className="mt-6 font-sans text-[0.95rem] text-muted">
         {QUESTIONS.detailsBefore}
-        <a href={`${SITE.repoUrl}#readme`} className="underline decoration-foreground/40 underline-offset-4 hover:decoration-foreground">
+        <a href={`${SITE.repoUrl}#readme`} className="link">
           {QUESTIONS.detailsLink}
         </a>
         {QUESTIONS.detailsAfter} {QUESTIONS.moreBefore}
-        <a href={`${SITE.repoUrl}/issues`} className="underline decoration-foreground/40 underline-offset-4 hover:decoration-foreground">
+        <a href={`${SITE.repoUrl}/issues`} className="link">
           {QUESTIONS.moreLink}
         </a>
         {QUESTIONS.moreAfter}

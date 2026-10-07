@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PageShell } from "@/components/PageShell";
+import { NOT_FOUND } from "@/lib/content";
 import { SITE } from "@/lib/site";
 
-// A plain 404: no page sections, so the static 404.html stays small. Not indexed.
+// A 404 inside the site's frame: the header and footer lead back in, and the appearance switch still
+// works. One short section, so the static 404.html stays small. Not indexed.
 export const metadata: Metadata = {
-  title: `Page not found: ${SITE.name}`,
+  title: `${NOT_FOUND.title}: ${SITE.name}`,
   robots: { index: false },
 };
 
 export default function NotFound() {
   return (
-    <main className="mx-auto flex max-w-md flex-1 flex-col justify-center gap-4 px-6 py-24">
-      <h1 className="text-[2rem] leading-tight">Page not found</h1>
-      <p className="text-muted">There&rsquo;s nothing at this address.</p>
-      <Link href="/" className="font-semibold underline underline-offset-4">
-        Go to the {SITE.name} home page
-      </Link>
-    </main>
+    <PageShell path="">
+      <section className="px-4 py-24 sm:px-6 sm:py-32">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="text-[clamp(2.4rem,1.6rem+3vw,3.6rem)] leading-[1.05] tracking-[-0.02em]">{NOT_FOUND.title}</h1>
+          <p className="mt-5 max-w-2xl">{NOT_FOUND.body}</p>
+          {/* Plain link: each page is a static file. */}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/" className="link mt-8 inline-flex min-h-11 items-center font-sans text-[1.05rem] font-semibold">
+            {NOT_FOUND.home}
+          </a>
+        </div>
+      </section>
+    </PageShell>
   );
 }

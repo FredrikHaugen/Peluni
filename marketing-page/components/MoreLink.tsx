@@ -2,7 +2,7 @@
 export function MoreLink({ text, href }: { text: string; href: string }) {
   return (
     <p className="mt-6 font-sans text-[1.05rem]">
-      <a href={href} className="inline-flex min-h-11 items-center underline decoration-foreground/40 underline-offset-4 hover:decoration-foreground">
+      <a href={href} className="link inline-flex min-h-11 items-center">
         {text}
       </a>
     </p>

@@ -207,6 +207,12 @@ export const FOOTER_NOTE = {
 } as const;
 
 // Sub-page furniture (components/PageBody.tsx).
+export const NOT_FOUND = {
+  title: "Page not found",
+  body: "There's nothing at this address.",
+  home: "Go to the home page",
+} as const;
+
 export const PAGE_NAV = {
   onThisPage: "On this page",
   skip: "Skip to content",

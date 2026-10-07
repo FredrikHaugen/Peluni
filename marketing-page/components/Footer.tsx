@@ -4,7 +4,7 @@ import { FOOTER_NOTE } from "@/lib/content";
 import { PAGES } from "@/lib/pages";
 import { SITE } from "@/lib/site";
 
-const LINK = "underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground";
+const LINK = "link";
 // Standalone list links get a 44 px tap target; the settings button sits inside a sentence and keeps LINK.
 const LIST_LINK = `inline-flex min-h-11 items-center ${LINK}`;
 

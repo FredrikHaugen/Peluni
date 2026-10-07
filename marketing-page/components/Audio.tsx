@@ -63,7 +63,7 @@ export function Audio() {
       <OfflineScene />
       <p className="mt-10 max-w-3xl text-[clamp(1.2rem,1.05rem+0.6vw,1.5rem)] leading-[1.4]">
         {AUDIO.paragraphs[0]} {AUDIO.sourceBefore}{" "}
-        <a href={SITE.repoUrl} className="underline decoration-foreground/40 underline-offset-4 hover:decoration-foreground">
+        <a href={SITE.repoUrl} className="link">
           {AUDIO.sourceLink}
         </a>
         {AUDIO.sourceAfter}

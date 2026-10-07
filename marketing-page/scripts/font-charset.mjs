@@ -16,7 +16,7 @@ export const FALLBACK_SYMBOLS = "→⌘⌥";
 
 // JSX may spell a character as an HTML entity ("There&rsquo;s"); count what it renders as.
 const NAMED = { rsquo: "’", lsquo: "‘", rdquo: "”", ldquo: "“", hellip: "…", nbsp: "\u00a0", apos: "'", quot: '"', amp: "&" };
-const decode = (text) =>
+export const decode = (text) =>
   text
     .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
     .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))

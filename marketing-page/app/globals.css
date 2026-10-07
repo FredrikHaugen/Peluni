@@ -19,6 +19,8 @@
   --select-foreground: #171a18;
   /* The logo's teal: record light, the .selected underline, the default chip. */
   --rec: #9ddeb9;
+  /* Text on the teal (the default chip): ink in both themes. */
+  --rec-foreground: #171a18;
   /* peluni's real overlay is dark in both themes. */
   --overlay: #1d1d1f;
   --overlay-foreground: #f5f5f7;
@@ -89,6 +91,7 @@
   --color-select: var(--select);
   --color-select-foreground: var(--select-foreground);
   --color-rec: var(--rec);
+  --color-rec-foreground: var(--rec-foreground);
   --color-overlay: var(--overlay);
   --color-overlay-foreground: var(--overlay-foreground);
   --font-sans: var(--font-ui), system-ui, sans-serif;
@@ -175,6 +178,27 @@ h3 {
 /* The desk behind the audio path. */
 .desk {
   background: var(--desk);
+}
+
+/* A link: underlined text, its line at 40% of the text's own color, full strength on hover or when it
+   marks the current page. currentColor keeps it right on muted text and in the dark band. */
+@layer components {
+  .link {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.15s ease-out;
+  }
+  .link:hover,
+  .link[aria-current="page"] {
+    text-decoration-color: currentColor;
+  }
+}
+
+/* Reading text avoids one-word last lines. */
+p,
+li {
+  text-wrap: pretty;
 }
 
 /* Words peluni put there: vocabulary terms, and the reminder that just landed. A teal marker stroke
