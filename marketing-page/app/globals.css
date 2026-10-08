@@ -196,11 +196,14 @@ h3 {
 }
 
 /* Reading text avoids one-word last lines, and a long unbroken string (an ID, a path) breaks rather
-   than pushing past the edge, where the body's overflow clip would hide it. */
-p,
-li {
-  text-wrap: pretty;
-  overflow-wrap: break-word;
+   than pushing past the edge, where the body's overflow clip would hide it. In the base layer, so a
+   `text-balance` utility on a display line still wins. */
+@layer base {
+  p,
+  li {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Words peluni put there: vocabulary terms, and the reminder that just landed. A teal marker stroke
